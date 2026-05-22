@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void: #050410;
+  --dream: #9b6dff;
+  --neural: #4fd6e0;
+  --synapse: #ff6da8;
+  --ember: #f5c46b;
+  --mist: #e7e2ff;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--void);
+  color: var(--mist);
+}
+
+body {
+  background-color: #040310;
+  background-image:
+    radial-gradient(ellipse 1200px 640px at 12% -8%, rgba(124, 77, 255, 0.16), transparent 60%),
+    radial-gradient(ellipse 1000px 560px at 90% 2%, rgba(79, 214, 224, 0.10), transparent 62%),
+    radial-gradient(ellipse 1300px 700px at 50% 116%, rgba(255, 109, 168, 0.10), transparent 60%);
+  font-family: "Spectral", ui-serif, Georgia, serif;
+  letter-spacing: 0.004em;
+}
+
+::selection { background: rgba(155, 109, 255, 0.45); color: #f4f1ff; }
+
+.display { font-family: "Fraunces", ui-serif, Georgia, serif; font-weight: 600; }
+.zh { font-family: "Noto Serif SC", serif; }
+.label-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.66rem; color: #b794ff;
+}
+
+.dream-text {
+  color: #cdb6ff;
+  text-shadow: 0 0 26px rgba(155, 109, 255, 0.6), 0 0 70px rgba(79, 214, 224, 0.3);
+}
+.ember-text {
+  color: #ffd98a;
+  text-shadow: 0 0 24px rgba(245, 196, 107, 0.5);
+}
+
+/* glass panel */
+.glass {
+  background: linear-gradient(160deg, rgba(27, 22, 66, 0.55), rgba(7, 6, 19, 0.86));
+  border: 1px solid rgba(231, 226, 255, 0.10);
+  backdrop-filter: blur(9px);
+}
+.glass:hover { border-color: rgba(155, 109, 255, 0.34); }
+
+.rule-dream {
+  background: linear-gradient(90deg, transparent, rgba(155,109,255,0.6) 18%, rgba(79,214,224,0.45) 82%, transparent);
+}
+
+/* drifting symbol glow */
+@keyframes drift {
+  0% { transform: translateY(0) scale(0.7); opacity: 0; }
+  18% { opacity: 0.7; }
+  100% { transform: translateY(-240px) scale(1.25); opacity: 0; }
+}
+.drift { animation: drift linear infinite; }
+
+@keyframes flow { to { stroke-dashoffset: -44; } }
+.flow { stroke-dasharray: 5 8; animation: flow 1.7s linear infinite; }
+
+@keyframes synPulse { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+.pulse { animation: synPulse 2.6s ease-in-out infinite; }
+
+@keyframes breathe { 0%,100% { transform: scale(1); opacity: 0.85; } 50% { transform: scale(1.06); opacity: 1; } }
+.breathe { animation: breathe 7s ease-in-out infinite; }
+
+@keyframes riseIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+.rise-in { animation: riseIn 0.9s cubic-bezier(0.2,0.7,0.2,1) both; }
+.lang-fade { animation: riseIn 0.45s ease both; }
+
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spinSlow 80s linear infinite; transform-origin: center; }
+
+::-webkit-scrollbar { width: 10px; background: #040310; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #13102e, #272058); border-radius: 5px; }
